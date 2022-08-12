@@ -1,0 +1,27 @@
+<xs:schema xmlns:tns="http://ws.company.pe/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://ws.company.pe/" version="1.0">
+
+  <xs:element name="listarEmpresas" type="tns:listarEmpresas"/>
+
+  <xs:element name="listarEmpresasResponse" type="tns:listarEmpresasResponse"/>
+
+  <xs:complexType name="listarEmpresas">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="listarEmpresasResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:empresa"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="empresa">
+    <xs:sequence>
+      <xs:element name="id_empresa" type="xs:int"/>
+      <xs:element minOccurs="0" name="nombre" type="xs:string"/>
+      <xs:element minOccurs="0" name="pais" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
